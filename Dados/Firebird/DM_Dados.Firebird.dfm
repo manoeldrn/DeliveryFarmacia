@@ -5,12 +5,8 @@ object DM_DadosFB: TDM_DadosFB
   object FDConexao: TFDConnection
     Params.Strings = (
       'User_Name=SYSDBA'
-      
-        'Database=C:\Users\manoe\Desktop\DeliveryFarmacia\Dados\Firebird\' +
-        'DB.fdb'
       'Password=masterkey'
       'DriverID=FB')
-    Connected = True
     LoginPrompt = False
     Left = 64
     Top = 17
