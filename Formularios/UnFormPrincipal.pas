@@ -48,6 +48,14 @@ procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
   inherited;
   FDM_DadosFirebird := TDM_DadosFB.Create(Self);
+  FDM_DadosFirebird.FDConexao.Params.Database := ExtractFilePath(Application.ExeName)+'\Dados\Firebird\DB.fdb';
+  if not(FileExists(FDM_DadosFirebird.FDConexao.Params.Database)) then
+  begin
+    ShowMessage('Banco de dados não encontrado!');
+    Application.Terminate;
+  end
+  else
+    FDM_DadosFirebird.FDConexao.Connected :=True;
 end;
 
 procedure TFormPrincipal.FormDestroy(Sender: TObject);
